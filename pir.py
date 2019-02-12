@@ -11,7 +11,7 @@ try:
 		if GPIO.input(21):
 			print("Motion Detected!")
 			time.sleep(2)
-		time.sleep(0.1)
+		time.sleep(0.2)
 
 except:
 	GPIO.cleanup()
