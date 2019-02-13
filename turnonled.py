@@ -1,19 +1,13 @@
 import RPi.GPIO as GPIO
-import time
-
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(14, GPIO.IN)
 GPIO.setup(21, GPIO.OUT)
-
+GPIO.setup(20, GPIO.OUT)
+GPIO.setup(16, GPIO.IN)
 try:
-	while True:
-		GPIO.output(21,GPIO.HIGH);
-		time.sleep(2);
+	GPIO.output(20,GPIO.HIGH);
+	while(GPIO.input(16)):
 		GPIO.output(21,GPIO.LOW);
-		time.sleep(2);
-
-
 except:
 	GPIO.cleanup();
